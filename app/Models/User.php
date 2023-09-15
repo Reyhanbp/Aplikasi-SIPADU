@@ -18,12 +18,13 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'profil',
         'name',
         'email',
         'password',
-        'phone',
-        'location',
-        'about_me',
+        'level',
+        'jenis_kelamin',
+        'user_group_id'
     ];
 
     /**
@@ -44,5 +45,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
+    public function user_group()
+    {
+        return $this->belongsTo(UserGroup::class);
+    }
+    public static function booted()
+    {
+        parent::boot();
+
+        self::deleted(function ($model) {
+            if (file_exists(storage_path('app/public/' . str_replace('storage/', '', $model->profil)))) {
+                unlink(storage_path('app/public/' . str_replace('storage/', '', $model->profil)));
+            }
+        });
+    }
+
 }

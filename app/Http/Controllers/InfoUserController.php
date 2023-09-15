@@ -3,55 +3,132 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\View;
 
 class InfoUserController extends Controller
 {
 
-    public function create()
+    public function Index(Request $request)
     {
-        return view('laravel-examples/user-profile');
+        $pagination = 5;
+        $data = User::where(function($q) use ($request) {
+            $q->where('name', 'LIKE', '%'.$request->search.'%');
+        })->orderBy('id','asc')->paginate($pagination);
+        return view('content.user.User', compact('data'));
     }
-
-    public function store(Request $request)
+    public function Get()
     {
+        $data = User::all();
+        return view('content.user.User', compact('data'));
+    }
+    public function profile() {
 
-        $attributes = request()->validate([
-            'name' => ['required', 'max:50'],
-            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
-            'phone'     => ['max:50'],
-            'location' => ['max:70'],
-            'about_me'    => ['max:150'],
+        $DataUserGroup = UserGroup::all();
+        return view('content.user-profile', compact('DataUserGroup'));
+    }
+    public function Tambah() {
+
+        $DataUserGroup = UserGroup::all();
+        return view('content.user.AddUser', compact('DataUserGroup'));
+    }
+    public function Edit($id){
+        $availableLevels = ['admin', 'warga']; // Daftar level yang tersedia
+        $DataUserGroup = UserGroup::all();
+        $user =  User::find($id);
+        return view('content.user.EditUser', compact('user','DataUserGroup','availableLevels'));
+    }
+    public function Update(Request $request, $id){
+        $user =  User::find($id);
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+            'user_group_id' => 'required',
+            'jenis_kelamin' => 'required',
+            'profil' => 'nullable|mimes:jpg,jpeg,png',
         ]);
-        if($request->get('email') != Auth::user()->email)
-        {
-            if(env('IS_DEMO') && Auth::user()->id == 1)
-            {
-                return redirect()->back()->withErrors(['msg2' => 'You are in a demo version, you can\'t change the email address.']);
-                
+
+        $request['password'] = bcrypt($request['password']);
+
+
+        if ($request->hasFile('profil')) {
+            // Hapus foto lama jika ada
+            if ($user->profil) {
+                Storage::disk('public')->delete($user->profil);
             }
-            
-        }
-        else{
-            $attribute = request()->validate([
-                'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
+
+            $file = $request->file('profil');
+            $fileName = $request->name . '.' . $file->getClientOriginalName();
+
+            $image = $file->storeAs('profil', $fileName, 'public');
+
+            // Update data dengan foto baru
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'level' => $request->level,
+                'user_group_id' => $request->user_group_id,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'profil' => $image
+            ]);
+        } else {
+            // Update data tanpa mengganti foto
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'level' => $request->level,
+                'user_group_id' => $request->user_group_id,
+                'jenis_kelamin' => $request->jenis_kelamin,
             ]);
         }
-        
-        
-        User::where('id',Auth::user()->id)
-        ->update([
-            'name'    => $attributes['name'],
-            'email' => $attribute['email'],
-            'phone'     => $attributes['phone'],
-            'location' => $attributes['location'],
-            'about_me'    => $attributes["about_me"],
+
+
+
+        return redirect() -> route('user')->with('message','Berhasil Memperbarui Data User');
+    }
+    public function Delete($id){
+        user::destroy($id);
+      return redirect() -> route('user')->with('message','Berhasil Menghapus Data User');
+    }
+    public function Send(Request $request) {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+            'user_group_id' => 'required|integer',
+            'jenis_kelamin' => 'required',
+            'profil' => 'required',
         ]);
 
 
-        return redirect('/user-profile')->with('success','Profile updated successfully');
+        $request['password'] = bcrypt($request['password']);
+        $data = UserGroup::where('id', $request['user_group_id'])->first();
+        $file = $request->file('profil');
+        $fileName = $request->name . '.' . $file->getClientOriginalName();
+
+        $image = $file->storeAs('profil', $fileName, 'public');
+        User::create([
+            'name' => $request-> name,
+            'email' => $request-> email,
+            'password' => $request-> password,
+            'level' => $request-> level,
+            'user_group_id' => $request->user_group_id,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'profil' => $image
+        ]);
+
+
+        return redirect() -> route('user')->with('message','Berhasil Menambahkan Data User ');
+
     }
 }

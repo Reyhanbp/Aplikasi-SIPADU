@@ -18,9 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->bigInteger('phone')->nullable();
-            $table->string('location')->nullable();
-            $table->string('about_me')->nullable();
+            $table->enum('level', ['admin', 'warga'])->default('warga');
+            $table->unsignedBigInteger('user_group_id')->nullable();
+            $table->foreign('user_group_id')->references('id')->on('user_groups')->onUpdate('restrict')->onDelete('restrict');
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
+            $table->string('profil')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
