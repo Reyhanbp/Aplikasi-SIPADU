@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
             $table->string('jdl_berita');
-            $table->string('desc_berita');
+            $table->text('desc_berita');
             $table->string('foto');
             $table->string('link')->nullable();
             $table->timestamps();

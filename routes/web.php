@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
+
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -42,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('rtl', function () {
         return view('rtl');
     })->name('rtl');
+    //home
 
     //User
     Route::get('/user', [InfoUserController::class, 'Index'])->name('user');
@@ -95,6 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::group(['middleware' => 'guest'], function () {
+    Route::get('/home', [HomeController::class, 'Index'])->name('home');
     Route::get('/register', [RegisterController::class, 'create']);
     Route::post('/register', [RegisterController::class, 'store']);
     Route::get('/login', [SessionsController::class, 'create']);
