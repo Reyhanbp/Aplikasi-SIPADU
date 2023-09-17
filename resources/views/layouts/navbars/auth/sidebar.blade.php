@@ -45,7 +45,7 @@
         <a class="nav-link" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
            <div class="ms-2">
             <i class="fas fa-users"></i>
-              <span class="ms-3 nav-link-text ms-1">Data Penduduk</span>
+              <span class="ms-3 nav-link-text ms-1">Kelola Data Penduduk</span>
           </div>
         </a>
       </li>
@@ -61,7 +61,7 @@
         <a class="nav-link" href="{{ url('static-sign-up') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
-              <span class="ms-3 nav-link-text ms-1">Pendatang</span>
+              <span class="ms-3 nav-link-text ms-1">Data Penduduk</span>
           </div>
         </a>
       </li>
@@ -69,7 +69,7 @@
         <a class="nav-link" href="{{ url('static-sign-up') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
-              <span class="ms-3 nav-link-text ms-1">Tetap</span>
+              <span class="ms-3 nav-link-text ms-1">Pendatang</span>
           </div>
         </a>
       </li>
@@ -89,6 +89,14 @@
           </div>
         </a>
       </li>
+      <li class="collapse" id="collapseExample" >
+        <a class="nav-link" href="{{ url('static-sign-up') }}">
+           <div class="ms-4">
+            <i class="fas fa-circle"></i>
+              <span class="ms-3 nav-link-text ms-1">Pindah</span>
+          </div>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link {{ (Request::is('tables') ? 'active' : '') }}" href="{{ url('tables') }}">
             <div class="ms-2">
@@ -98,7 +106,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('billing') ? 'active' : '') }}" href="{{ url('billing') }}">
+        <a class="nav-link {{ (Request::is('gallery') ? 'active' : '') }}" href="{{ route('gallery') }}">
            <div class="ms-2">
             <i class="fas fa-camera"></i>
               <span class="ms-3 nav-link-text ">Galery</span>
@@ -114,7 +122,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('rtl') ? 'active' : '') }}" href="{{ url('rtl') }}">
+        <a class="nav-link {{ (Request::is('pengumuman') ? 'active' : '') }}" href="{{ url('pengumuman') }}">
            <div class="ms-2">
             <i class="fas fa-chalkboard-teacher"></i>
               <span class="ms-3 nav-link-text ">Pengumuman</span>
@@ -182,5 +190,5 @@
       </li>
     </ul>
   </div>
-   
+
 </section>

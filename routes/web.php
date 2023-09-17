@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
@@ -25,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => 'auth'], function () {
-
     Route::get('/', [HomeController::class, 'home']);
 
     Route::get('dashboard', function () {
@@ -53,7 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-user/{id}', [InfoUserController::class, 'Edit'])->name('edit-User');
     Route::post('/update-user/{id}', [InfoUserController::class, 'Update'])->name('update-User');
     Route::DELETE('/delete-user/{id}', [InfoUserController::class, 'Delete'])->name('delete-User');
-    //User
+
+    //berita
     Route::get('/berita', [BeritaController::class, 'Index'])->name('berita');
     Route::get('/get', [BeritaController::class, 'Get'])->name('getdata');
     Route::get('/tambah-berita', [BeritaController::class, 'Tambah'])->name('tambah-berita');
@@ -61,6 +63,24 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-berita/{id}', [BeritaController::class, 'edit'])->name('edit-berita');
     Route::post('/update-berita/{id}', [BeritaController::class, 'update'])->name('update-berita');
     Route::DELETE('/delete-berita/{id}', [BeritaController::class, 'delete'])->name('delete-berita');
+
+    //pengumuman
+    Route::get('/pengumuman', [PengumumanController::class, 'Index'])->name('pengumuman');
+    Route::get('/get', [PengumumanController::class, 'Get'])->name('getdata');
+    Route::get('/tambah-pengumuman', [PengumumanController::class, 'Tambah'])->name('tambah-pengumuman');
+    Route::post('/send-pengumuman', [PengumumanController::class, 'send'])->name('Send-pengumuman');
+    Route::get('/edit-pengumuman/{id}', [PengumumanController::class, 'edit'])->name('edit-pengumuman');
+    Route::post('/update-pengumuman/{id}', [PengumumanController::class, 'update'])->name('update-pengumuman');
+    Route::DELETE('/delete-pengumuman/{id}', [PengumumanController::class, 'delete'])->name('delete-pengumuman');
+
+    //gallery
+    Route::get('/gallery', [GalleryController::class, 'Index'])->name('gallery');
+    Route::get('/get', [GalleryController::class, 'Get'])->name('getdata');
+    Route::get('/tambah-gallery', [GalleryController::class, 'Tambah'])->name('tambah-gallery');
+    Route::post('/send-gallery', [GalleryController::class, 'send'])->name('Send-gallery');
+    Route::get('/edit-gallery/{id}', [GalleryController::class, 'edit'])->name('edit-gallery');
+    Route::post('/update-gallery/{id}', [GalleryController::class, 'update'])->name('update-gallery');
+    Route::DELETE('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete-gallery');
 
     //usergroup
     Route::get('/user-group', [UserGroupController::class, 'Index'])->name('user-group');

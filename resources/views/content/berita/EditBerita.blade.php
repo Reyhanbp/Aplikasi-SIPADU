@@ -1,7 +1,6 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-
 <div class="card">
     <div class="card-header">
       <div class="card-title text w-100 d-flex justify-content-between">
@@ -47,11 +46,11 @@
                 </div>
                  <div class="col-12">
                     <div class="mb-5">
-                        <label for="link" class="form-label" > Link Tambahan </label>
+                        <label for="link" class="form-label" > Link <span class=" text-danger"> (Opsional)  </span> </label><br>
                           @if ($Berita->link)
-                            <p>Link yang sudah diunggah : <a href="{{ Storage::url($Berita->link) }}">{{ $Berita->link }}</a></p>
+                            <label>Link yang sudah diunggah : <a href="{{ Storage::url($Berita->link) }}">{{ $Berita->link }}</a></label>
                         @else
-                            <p>Belum ada link diunggah.</p>
+                            <label>Belum ada link diunggah.</label>
                         @endif
                         <input type="url" name="link" id="link" placeholder="Link Tambahan"
                           class="form-control" autoComplete="off" value="{{ $Berita->link }}"/>

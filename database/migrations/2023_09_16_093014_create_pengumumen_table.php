@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dapen_tetaps', function (Blueprint $table) {
+        Schema::create('pengumumen', function (Blueprint $table) {
             $table->id();
+            $table->string('jdl_pengumuman');
+            $table->text('pengumuman');
+            $table->string('file')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dapen_tetaps');
+        Schema::dropIfExists('pengumumen');
     }
 };
