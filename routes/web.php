@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\DataPendudukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
@@ -54,6 +55,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-user/{id}', [InfoUserController::class, 'Edit'])->name('edit-User');
     Route::post('/update-user/{id}', [InfoUserController::class, 'Update'])->name('update-User');
     Route::DELETE('/delete-user/{id}', [InfoUserController::class, 'Delete'])->name('delete-User');
+
+    //User
+    Route::get('/datapenduduk', [DataPendudukController::class, 'Index'])->name('datapenduduk');
+    Route::get('/get', [DataPendudukController::class, 'Get'])->name('getdata');
+    Route::get('/tambah-datapenduduk', [DataPendudukController::class, 'Tambah'])->name('tambah-datapenduduk');
+    Route::post('/send-datapenduduk', [DataPendudukController::class, 'Send'])->name('Send-datapenduduk');
+    Route::get('/edit-datapenduduk/{id}', [DataPendudukController::class, 'Edit'])->name('edit-datapenduduk');
+    Route::post('/update-datapenduduk/{id}', [DataPendudukController::class, 'Update'])->name('update-datapenduduk');
+    Route::DELETE('/delete-datapenduduk/{id}', [DataPendudukController::class, 'Delete'])->name('delete-datapenduduk');
 
     //berita
     Route::get('/berita', [BeritaController::class, 'Index'])->name('berita');

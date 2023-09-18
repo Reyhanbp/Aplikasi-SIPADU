@@ -8,14 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pengumuman extends Model
 {
     use HasFactory;
-    // protected $table = 'pengumumen';
-    // protected $fillable = [
-    //     'jdl_pengumuman',
-    //     'pengumumen',
-    //     'file',
-    //     'link',
-
-    // ];
+ 
     protected $guarded = [];
 
     public static function booted()
