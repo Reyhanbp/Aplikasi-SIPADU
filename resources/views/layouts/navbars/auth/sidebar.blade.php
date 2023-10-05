@@ -98,7 +98,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('tables') ? 'active' : '') }}" href="{{ url('tables') }}">
+        <a class="nav-link {{ (Request::is('data-kk') ? 'active' : '') }}" href="{{ route('data-kk') }}">
             <div class="ms-2">
             <i class="fas fa-user-friends"></i>
               <span class="ms-3 nav-link-text s-1">Data Kartu Keluarga</span>

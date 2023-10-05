@@ -65,6 +65,7 @@
     </div>
   @endif
     <!--   Core JS Files   -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>

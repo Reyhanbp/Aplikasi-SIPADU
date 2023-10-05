@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\DatakkController;
 use App\Http\Controllers\DataPendudukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
@@ -56,7 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-user/{id}', [InfoUserController::class, 'Update'])->name('update-User');
     Route::DELETE('/delete-user/{id}', [InfoUserController::class, 'Delete'])->name('delete-User');
 
-    //User
+    //Data Penduduk
     Route::get('/datapenduduk', [DataPendudukController::class, 'Index'])->name('datapenduduk');
     Route::get('/get', [DataPendudukController::class, 'Get'])->name('getdata');
     Route::get('/tambah-datapenduduk', [DataPendudukController::class, 'Tambah'])->name('tambah-datapenduduk');
@@ -64,6 +65,20 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-datapenduduk/{id}', [DataPendudukController::class, 'Edit'])->name('edit-datapenduduk');
     Route::post('/update-datapenduduk/{id}', [DataPendudukController::class, 'Update'])->name('update-datapenduduk');
     Route::DELETE('/delete-datapenduduk/{id}', [DataPendudukController::class, 'Delete'])->name('delete-datapenduduk');
+
+    //Data KK
+    Route::get('/data-kk', [DatakkController::class, 'Index'])->name('data-kk');
+    Route::get('/get', [DatakkController::class, 'Get'])->name('getdata');
+    Route::get('/tambah-data-kk', [DatakkController::class, 'Tambah'])->name('tambah-data-kk');
+    Route::post('/send-data-kk', [DatakkController::class, 'Send'])->name('Send-data-kk');
+    Route::get('/edit-data-kk/{id}', [DatakkController::class, 'Edit'])->name('edit-data-kk');
+    Route::post('/update-data-kk/{id}', [DatakkController::class, 'Update'])->name('update-data-kk');
+    Route::DELETE('/delete-data-kk/{id}', [DatakkController::class, 'Delete'])->name('delete-data-kk');
+
+    //Data anggota kk
+    Route::get('/addanggota-data-kk/{id}', [DatakkController::class, 'Show'])->name('addanggota-data-kk');
+    Route::post('/sendanggota-data-kk', [DatakkController::class, 'Sendanggota'])->name('Sendanggota-data-kk');
+    Route::DELETE('/deleteanggota-data-kk/{id}', [DatakkController::class, 'Deleteanggota'])->name('deleteanggota-data-kk');
 
     //berita
     Route::get('/berita', [BeritaController::class, 'Index'])->name('berita');

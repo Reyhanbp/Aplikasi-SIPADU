@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_penduduks', function (Blueprint $table) {
             $table->id();
-            $table->integer('NIK');
+            $table->bigInteger('NIK');
             $table->string('name');
             $table->string('tmpt_lahir');
             $table->date('tgl_lahir');
