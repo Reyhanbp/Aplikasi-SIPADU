@@ -59,7 +59,10 @@
         .login-button-wrapper {
             display: inline-block;
             margin-right: 20px;
-
+        }
+        .footer {
+            border-radius: 50px;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +95,110 @@
                       </div>
                   </div>
               </div>
-
+             <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="footer">
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #161C28
+            "
+            >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <img width="100px" src="{{asset('assets/img/LOGO S1.png')}}">
+              <h5 class="text-uppercase">SIPADU</h5>
+  
+              
+            </div>
+            <!--Grid column-->
+  
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Support</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Help Centre</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Account information</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">About</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Help and Solution</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Talk to Support</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Support docs</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">System status</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Covid Responde</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Product</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+ 
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2020 Copyright : Aplikasi Sipadu
+        
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of .container -->
 </body>
 </html>
