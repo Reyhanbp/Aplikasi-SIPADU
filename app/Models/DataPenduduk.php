@@ -29,6 +29,10 @@ class DataPenduduk extends Model
     {
         return $this->hasMany(Datakk::class);
     }
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
     public function data_penduduk()
     {
         return $this->belongsTo(Datakk::class,'data_kk_id');

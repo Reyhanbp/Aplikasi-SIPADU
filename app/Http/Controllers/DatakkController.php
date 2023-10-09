@@ -110,9 +110,10 @@ class DatakkController extends Controller
         }
 
         $anggotaKk = $Datakk->addanggota;
- 
+
         return view('content.datakk.AddAnggotaKK',  compact('Datakk', 'DataPenduduk', 'anggotaKk'));
     }
+
     public function sendanggota(Request $request)
     {
         $request->validate([
