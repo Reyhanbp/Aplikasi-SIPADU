@@ -1,187 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contoh Tampilan</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet" />
     <style>
-        /* Gaya untuk elemen-elemen HTML yang telah diberikan */
-        .LandingPage {
-            width: 1440px;
-            height: 4441px;
-            position: relative;
-            background: white;
-            border-radius: 15px;
+        /* Add styling to the navbar */
+        .navbar {
+            background-color: #fff;
             overflow: hidden;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .Ellipse36 {
-            width: 634px;
-            height: 634px;
-            left: -290px;
-            top: -306px;
-            position: absolute;
-            background: #525FE1;
-            box-shadow: 0 0 1000px rgba(0, 0, 0, 0.67);
-            border-radius: 9999px;
-            filter: blur(1000px);
+        /* Style the product name on the left */
+        .brand {
+            float: left;
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .Ellipse38 {
-            width: 1155px;
-            height: 1155px;
-            left: -715px;
-            top: 3200px;
-            position: absolute;
-            border: 47px solid rgba(33, 138, 254, 0.67);
+        /* Style the navbar items on the right */
+        .navbar-right {
+            float: right;
+            margin-right: 20px;
         }
 
-        .GalleryTerkini {
-            width: 629px;
-            left: 123px;
-            top: 3168px;
-            position: absolute;
-            color: #191A15;
-            font-size: 50px;
-            font-family: Poppins, sans-serif;
-            font-weight: 600;
-            word-wrap: break-word;
+        .navbar-right ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .Frame254 {
-            width: 1440px;
-            height: 99px;
-            left: 0px;
-            top: 0px;
-            position: absolute;
-            background: rgba(255, 255, 255, 0);
+        .navbar-right li {
+            display: inline;
+            margin-right: 20px;
         }
 
-        .Sipadu {
-            left: 131px;
-            top: 34px;
-            position: absolute;
-            color: black;
-            font-size: 36px;
-            font-family: Inter, sans-serif;
-            font-weight: 600;
-            line-height: 30px;
-            word-wrap: break-word;
+        .navbar-right a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
         }
 
-        .Frame257 {
-            width: 346px;
-            height: 39px;
-            left: 890px;
-            top: 30px;
-            position: absolute;
+        /* Style the login button */
+        .login-button {
+            background-color: blue;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
         }
 
-        .Frame228 {
-            padding-right: 26px;
-            left: 0px;
-            top: 8.50px;
-            position: absolute;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 40px;
-            display: inline-flex;
+        .login-button-wrapper {
+            display: inline-block;
+            margin-right: 20px;
         }
-
-        .Home {
-            color: black;
-            font-size: 18px;
-            font-family: Inter, sans-serif;
-            font-weight: 500;
-            word-wrap: break-word;
-        }
-
-        .Berita {
-            color: #A6A6A6;
-            font-size: 16px;
-            font-family: Inter, sans-serif;
-            font-weight: 700;
-            word-wrap: break-word;
-        }
-
-        .Galery {
-            color: #A6A6A6;
-            font-size: 16px;
-            font-family: Inter, sans-serif;
-            font-weight: 500;
-            word-wrap: break-word;
-        }
-
-        .Frame1 {
-            width: 80px;
-            padding: 10px;
-            left: 266px;
-            top: 0px;
-            position: absolute;
-            background: #218AFE;
-            border-radius: 20px;
-            overflow: hidden;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            display: inline-flex;
-        }
-
-        .Login {
-            color: #F8F8FA;
-            font-size: 16px;
-            font-family: Inter, sans-serif;
-            font-weight: 500;
-            word-wrap: break-word;
-        }
-
-        .Rectangle164 {
-            width: 73px;
-            height: 34px;
-            left: 77px;
-            top: 1px;
-            position: absolute;
-            background: rgba(217, 217, 217, 0);
-        }
-
-        .Rectangle165 {
-            width: 73px;
-            height: 34px;
-            left: 171px;
-            top: 1px;
-            position: absolute;
-            background: rgba(217, 217, 217, 0);
-        }
-
-        .LogoS11 {
-            width: 39px;
-            height: 44px;
-            left: 86px;
-            top: 27px;
-            position: absolute;
+        .footer {
+            border-radius: 50px;
         }
     </style>
 </head>
 <body>
-    <!-- Struktur HTML yang sesuai dengan contoh yang Anda berikan -->
-    <div class="LandingPage">
-        <div class="Ellipse36"></div>
-        <div class="Frame254">
-            <div class="Sipadu">SIPADU</div>
-            <div class="Frame257">
-                <div class="Frame228">
-                    <div class="Home">Home</div>
-                    <div class="Berita">Berita</div>
-                    <div class="Galery">Galery</div>
-                </div>
-                <div class="Frame1">
-                    <div class="Login">Login</div>
-                </div>
+
+<div class="navbar">
+    <div class="brand">SIPADU</div>
+    <div class="navbar-right">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#berita">Berita</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><button class="login-button btn btn-primary">Login</button></li>
+        </ul>
+
+    </div>
+</div>
+<div class="card border-0 overflow-hidden ms-5 mt-1" >
+                  <div class="card-body p-0">
+                      <div class="row gx-0">
+                          <div class="col-lg-6 col-xl-5 py-lg-5">
+                              <div class="p-4 p-md-5">
+                                  <div class="h1 fw-bolder mb-3">Selamat Datang Di Desa</div>
+                                  <p class="mb-2">Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda</p>
+                              </div>
+                          </div>
+                          <div class="col-lg-5 col-xl-7"><div class="bg-featured-blog">
+                            <img class="ms-5" src="{{asset('assets/img/sipadu.png')}}" alt="">
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+             <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="footer">
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #161C28
+            "
+            >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <img width="100px" src="{{asset('assets/img/LOGO S1.png')}}">
+              <h5 class="text-uppercase">SIPADU</h5>
+
 
             </div>
-            <img class="LogoS11" src="https://via.placeholder.com/39x44" alt="Logo">
-        </div>
-        <!-- Anda dapat melanjutkan dengan menambahkan elemen-elemen HTML lainnya di sini -->
-    </div>
+            <!--Grid column-->
+
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Support</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Help Centre</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Account information</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">About</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Help and Solution</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Talk to Support</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Support docs</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">System status</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Covid Responde</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Product</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2020 Copyright : Aplikasi Sipadu
+
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of .container -->
 </body>
 </html>
