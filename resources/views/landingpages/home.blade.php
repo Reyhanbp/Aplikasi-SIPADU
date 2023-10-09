@@ -88,13 +88,14 @@
                                   <p class="mb-2">Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda</p>
                               </div>
                           </div>
-                          <div class="col-lg-5 col-xl-7"><div class="bg-featured-blog">
+                          <div class="col-lg-6 col-xl-7"><div class="bg-featured-blog">
                             <img class="ms-5" src="{{asset('assets/img/sipadu.png')}}" alt="">
                           </div>
                         </div>
                       </div>
                   </div>
               </div>
+
              <!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="footer">
     <!-- Footer -->
