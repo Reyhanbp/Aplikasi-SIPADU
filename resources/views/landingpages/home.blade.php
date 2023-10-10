@@ -86,7 +86,7 @@
                         <div class="col-lg-6 col-xl-5 py-lg-5">
                             <div class="p-4 p-md-5">
                                 <div class="h1 fw-bolder mb-3">Selamat Datang Di Desa</div>
-                                <p class="mb-2">Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda</p>    
+                                <p class="mb-2">Sebuah aplikasi sistem pendataan" penduduk untuk membantu amankan data penduduk anda</p>    
                             </div>
                         </div>
                         <div class="col-lg-5 col-xl-7"><div class="bg-featured-blog">
