@@ -68,13 +68,17 @@
 <body>
 
 <div class="navbar">
-    <div class="brand">SIPADU</div>
+    <div class="brand">
+             <img class="ms-2" width="50px" src="{{asset('assets/img/LOGO S1.png')}}">
+        SIPADU</div>
     <div class="navbar-right">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#berita">Berita</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><button class="login-button btn btn-primary">Login</button></li>
+            <li>
+                <a class="login-button btn btn-primary" role="button" href="{{url('login')}}">Login</a>
+            </li>
         </ul>
 
     </div>

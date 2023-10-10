@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\KotakSaranController;
 use App\Http\Controllers\MelahirkanController;
+use App\Http\Controllers\MeninggalController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
@@ -99,6 +100,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-melahirkan/{id}', [MelahirkanController::class, 'update'])->name('update-melahirkan');
     Route::DELETE('/delete-melahirkan/{id}', [MelahirkanController::class, 'delete'])->name('delete-melahirkan');
 
+    //Data meninggal
+    Route::get('/meninggal', [MeninggalController::class, 'Index'])->name('meninggal');
+    Route::get('/tambah-meninggal', [MeninggalController::class, 'Tambah'])->name('tambah-meninggal');
+    Route::post('/send-meninggal', [MeninggalController::class, 'send'])->name('Send-meninggal');
+    Route::get('/edit-meninggal/{id}', [MeninggalController::class, 'edit'])->name('edit-meninggal');
+    Route::post('/update-meninggal/{id}', [MeninggalController::class, 'update'])->name('update-meninggal');
+    Route::DELETE('/delete-meninggal/{id}', [MeninggalController::class, 'delete'])->name('delete-meninggal');
+
     //Kotak Saran
     Route::get('/kotaksaran', [KotakSaranController::class, 'Index'])->name('kotaksaran');
     Route::get('/get', [KotakSaranController::class, 'Get'])->name('getdata');
@@ -150,12 +159,12 @@ Route::group(['middleware' => 'auth'], function () {
         return view('static-sign-up');
     })->name('sign-up');
 
-    Route::get('/logout', [SessionsController::class, 'destroy']);
     Route::get('/user-profile', [InfoUserController::class, 'profile'])->name('user-profile');
     // Route::post('/user-profile', [InfoUserController::class, 'store']);
     Route::get('/login', function () {
         return view('dashboard');
     })->name('sign-up');
+    Route::get('/logout', [SessionsController::class, 'destroy']);
 });
 
 
@@ -164,15 +173,15 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/home', [HomeController::class, 'Index'])->name('home');
     Route::get('/register', [RegisterController::class, 'create']);
     Route::post('/register', [RegisterController::class, 'store']);
-    Route::get('/login', [SessionsController::class, 'create']);
     Route::post('/session', [SessionsController::class, 'store']);
     Route::get('/login/forgot-password', [ResetController::class, 'create']);
     Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
     Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
     Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 
+    Route::get('/login', [SessionsController::class, 'create'])->name('login');
 });
 
-Route::get('/login', function () {
-    return view('session/login-session');
+Route::get('/home', function () {
+    return view('landingpages.home');
 })->name('login');

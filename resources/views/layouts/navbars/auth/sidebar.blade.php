@@ -48,15 +48,7 @@
               <span class="ms-3 nav-link-text ms-1">Kelola Data Penduduk</span>
           </div>
         </a>
-      </li>
-      <li class="collapse" id="collapseExample" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
-           <div class="ms-4">
-            <i class="fas fa-circle"></i>
-              <span class="ms-3 nav-link-text ms-1">Total Penduduk</span>
-          </div>
-        </a>
-      </li>
+    </li>
       <li class="collapse" id="collapseExample" >
         <a class="nav-link {{ (Request::is('datapenduduk') ? 'active' : '') }}" href="{{ route('datapenduduk') }}">
            <div class="ms-4">
@@ -74,8 +66,8 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample" >
-        <a class="nav-link" href="{{ url('melahirkan') }}">
-           <div class="ms-4">
+        <a class="nav-link {{ (Request::is('meninggal') ? 'active' : '') }}" href="{{ url('meninggal') }}">
+            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Meninggal</span>
           </div>
