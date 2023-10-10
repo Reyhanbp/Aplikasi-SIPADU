@@ -19,18 +19,39 @@
         <form action="{{route('Send-User')}}" method="POST" enctype="multipart/form-data">
           @csrf
         <div class="card-body">
-          <div class="col-12 d-flex justify-content-center" >
-            <div class="mb-3">
-              <label for="profil" class="required" >
-                Profil :
-              </label>
-              <input type="file" class="form-control" name="profil" required>
-            </div>
-          </div>
-          <div class="row">
+            <div class="row">
+              <div class="col-6" >
+                <div class="mb-3">
+                  <label for="profil" class="required" >
+                    Profil :
+                  </label>
+                  <input type="file" class="form-control" name="profil" required>
+                </div>
+              </div>
+              <div class="col-6" >
+                <div class="mb-3">
+                  <label for="data_penduduk_id" class="required" >
+                    Nama Penduduk :
+                  </label>
+                 <select
+                  class="form-control"
+                  name="data_penduduk_id"
+                  placeholder="Pilih data_penduduk_id"
+                  id="data_penduduk_id"
+                  required
+                >
+
+                  <option value="">Pilih</option>
+                  @foreach ($DataPenduduk as $item)
+                  <option value="{{$item -> id}}">{{$item -> name}}</option>
+                  @endforeach
+
+                </select>
+                </div>
+              </div>
           <div class="col-6">
             <div class="mb-3">
-              <label for="name" class="form-label required" > Name : </label>
+              <label for="name" class="form-label required" > Username : </label>
               <input type="text" name="name" id="name" placeholder="Name"
                 class="form-control" required autoComplete="off"  />
             </div>

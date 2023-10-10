@@ -10,7 +10,6 @@ class GalleryController extends Controller
 {
     public function index(Request $request)
     {
-        // $data = Pengumuman::all();
         $pagination = 5;
         $data = Gallery::where(function ($q) use ($request) {
             $q->where('jdl_gallery', 'LIKE', '%' . $request->search . '%');

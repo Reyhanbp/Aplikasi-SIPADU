@@ -7,6 +7,8 @@ use App\Http\Controllers\DataPendudukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\KotakSaranController;
+use App\Http\Controllers\MelahirkanController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
@@ -88,6 +90,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-berita/{id}', [BeritaController::class, 'edit'])->name('edit-berita');
     Route::post('/update-berita/{id}', [BeritaController::class, 'update'])->name('update-berita');
     Route::DELETE('/delete-berita/{id}', [BeritaController::class, 'delete'])->name('delete-berita');
+
+    //Data Melahirkan
+    Route::get('/melahirkan', [MelahirkanController::class, 'Index'])->name('melahirkan');
+    Route::get('/tambah-melahirkan', [MelahirkanController::class, 'Tambah'])->name('tambah-melahirkan');
+    Route::post('/send-melahirkan', [MelahirkanController::class, 'send'])->name('Send-melahirkan');
+    Route::get('/edit-melahirkan/{id}', [MelahirkanController::class, 'edit'])->name('edit-melahirkan');
+    Route::post('/update-melahirkan/{id}', [MelahirkanController::class, 'update'])->name('update-melahirkan');
+    Route::DELETE('/delete-melahirkan/{id}', [MelahirkanController::class, 'delete'])->name('delete-melahirkan');
+
+    //Kotak Saran
+    Route::get('/kotaksaran', [KotakSaranController::class, 'Index'])->name('kotaksaran');
+    Route::get('/get', [KotakSaranController::class, 'Get'])->name('getdata');
+    Route::get('/tambah-kotaksaran', [KotakSaranController::class, 'Tambah'])->name('tambah-kotaksaran');
+    Route::post('/send-kotaksaran', [KotakSaranController::class, 'send'])->name('Send-kotaksaran');
+    Route::get('/edit-kotaksaran/{id}', [KotakSaranController::class, 'edit'])->name('edit-kotaksaran');
+    Route::post('/update-kotaksaran/{id}', [KotakSaranController::class, 'update'])->name('update-kotaksaran');
+    Route::DELETE('/delete-kotaksaran/{id}', [KotakSaranController::class, 'delete'])->name('delete-kotaksaran');
 
     //pengumuman
     Route::get('/pengumuman', [PengumumanController::class, 'Index'])->name('pengumuman');

@@ -74,7 +74,7 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link" href="{{ url('melahirkan') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Meninggal</span>
@@ -82,7 +82,7 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link  {{ (Request::is('melahirkan') ? 'active' : '') }}" href="{{ url('melahirkan') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Melahirkan</span>
@@ -130,7 +130,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('rtl') ? 'active' : '') }}" href="{{ url('rtl') }}">
+        <a class="nav-link {{ (Request::is('kotaksaran') ? 'active' : '') }}" href="{{ url('kotaksaran') }}">
            <div class="ms-2">
             <i class="fas fa-inbox"></i>
               <span class="ms-3 nav-link-text ms-1">Kotak Saran</span>
@@ -181,7 +181,7 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample2" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link " href="{{ url('melahirkan') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Melahirkan</span>

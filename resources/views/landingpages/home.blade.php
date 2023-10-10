@@ -76,7 +76,7 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><button class="login-button btn btn-primary">Login</button></li>
         </ul>
-        
+
     </div>
 </div>
             <div class="container">
@@ -162,9 +162,13 @@
                       </div>
                   </div>
               </div>
+<<<<<<< HEAD
           </div>
           
             
+=======
+
+>>>>>>> refs/remotes/origin/master
              <!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="footer">
     <!-- Footer -->
@@ -183,16 +187,16 @@
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <img width="100px" src="{{asset('assets/img/LOGO S1.png')}}">
               <h5 class="text-uppercase">SIPADU</h5>
-  
-              
+
+
             </div>
             <!--Grid column-->
-  
-  
+
+
             <!--Grid column-->
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Support</h5>
-  
+
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Help Centre</a>
@@ -209,11 +213,11 @@
               </ul>
             </div>
             <!--Grid column-->
-  
+
             <!--Grid column-->
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Help and Solution</h5>
-  
+
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Talk to Support</a>
@@ -230,11 +234,11 @@
               </ul>
             </div>
             <!--Grid column-->
-  
+
             <!--Grid column-->
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Product</h5>
-  
+
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Link 1</a>
@@ -253,17 +257,17 @@
             <!--Grid column-->
           </div>
           <!--Grid row-->
- 
+
       </div>
       <!-- Grid container -->
-  
+
       <!-- Copyright -->
       <div
            class="text-center p-3"
            style="background-color: rgba(0, 0, 0, 0.2)"
            >
         © 2020 Copyright : Aplikasi Sipadu
-        
+
       </div>
       <!-- Copyright -->
     </footer>
