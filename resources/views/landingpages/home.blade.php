@@ -90,7 +90,7 @@
                         <div class="col-lg-6 col-xl-5 py-lg-5">
                             <div class="p-4 p-md-5">
                                 <div class="h1 fw-bolder mb-3">Selamat Datang Di Desa</div>
-                                <p class="mb-2">Sebuah aplikasi sistem pendataan" penduduk untuk membantu amankan data penduduk anda</p>    
+                                <p class="mb-2">Sebuah aplikasi sistem pendataan" penduduk untuk membantu amankan data penduduk anda</p>
                             </div>
                         </div>
                         <div class="col-lg-5 col-xl-7"><div class="bg-featured-blog">
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Right Column for Paragraph -->
                     <div class="col-lg-8 col-xl-8 mt-5">
                         <div class="card border-0 overflow-hidden">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-            </div>          
+            </div>
             <div class="container" style="margin-top: 10%">
               <div class="text-center"><h1>Data Penduduk</h1></div>
               <div class="row mt-5">
@@ -138,7 +138,7 @@
                           </div>
                       </div>
                   </div>
-          
+
                   <div class="col-lg-3 col-md-6 mb-4">
                       <div class="card">
                           <img src="{{asset('assets/img/team-2.jpg')}}" class="card-img-top" alt="Profile Image 2">
@@ -147,7 +147,7 @@
                           </div>
                       </div>
                   </div>
-          
+
                   <div class="col-lg-3 col-md-6 mb-4">
                       <div class="card">
                           <img src="{{asset('assets/img/team-3.jpg')}}" class="card-img-top" alt="Profile Image 3">
@@ -156,7 +156,7 @@
                           </div>
                       </div>
                   </div>
-          
+
                   <div class="col-lg-3 col-md-6 mb-4">
                       <div class="card">
                           <img src="{{asset('assets/img/team-4.jpg')}}" class="card-img-top" alt="Profile Image 4">
@@ -166,13 +166,9 @@
                       </div>
                   </div>
               </div>
-<<<<<<< HEAD
           </div>
-          
-            
-=======
 
->>>>>>> refs/remotes/origin/master
+
              <!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="footer">
     <!-- Footer -->
