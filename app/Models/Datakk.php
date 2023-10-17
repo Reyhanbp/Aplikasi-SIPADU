@@ -33,5 +33,9 @@ class Datakk extends Model
     {
         return $this->hasMany(AddAnggota::class, 'kk_id');
     }
+    public function melahirkan()
+    {
+        return $this->hasMany(Melahirkan::class);
+    }
 
 }

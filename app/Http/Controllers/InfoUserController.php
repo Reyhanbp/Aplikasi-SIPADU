@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataPenduduk;
 use App\Models\User;
 use App\Models\UserGroup;
 use Illuminate\Http\Request;
@@ -35,11 +36,13 @@ class InfoUserController extends Controller
     public function Tambah() {
 
         $DataUserGroup = UserGroup::all();
-        return view('content.user.AddUser', compact('DataUserGroup'));
+        $DataPenduduk = DataPenduduk::all();
+        return view('content.user.AddUser', compact('DataUserGroup','DataPenduduk'));
     }
     public function Edit($id){
         $availableLevels = ['admin', 'warga']; // Daftar level yang tersedia
         $DataUserGroup = UserGroup::all();
+        $DataPenduduk = DataPenduduk::all();
         $user =  User::find($id);
         return view('content.user.EditUser', compact('user','DataUserGroup','availableLevels'));
     }
@@ -51,12 +54,12 @@ class InfoUserController extends Controller
             'password' => 'required',
             'level' => 'required',
             'user_group_id' => 'required',
+            'data_penduduk_id' => 'nullable',
             'jenis_kelamin' => 'required',
-            'profil' => 'nullable|mimes:jpg,jpeg,png',
+            'profil' => 'nullable',
         ]);
 
         $request['password'] = bcrypt($request['password']);
-
 
         if ($request->hasFile('profil')) {
             // Hapus foto lama jika ada
@@ -76,6 +79,7 @@ class InfoUserController extends Controller
                 'password' => $request->password,
                 'level' => $request->level,
                 'user_group_id' => $request->user_group_id,
+                'data_penduduk_id' => $request->data_penduduk_id,
                 'jenis_kelamin' => $request->jenis_kelamin,
                 'profil' => $image
             ]);
@@ -87,6 +91,7 @@ class InfoUserController extends Controller
                 'password' => $request->password,
                 'level' => $request->level,
                 'user_group_id' => $request->user_group_id,
+                'data_penduduk_id' => $request->data_penduduk_id,
                 'jenis_kelamin' => $request->jenis_kelamin,
             ]);
         }
@@ -106,13 +111,15 @@ class InfoUserController extends Controller
             'password' => 'required',
             'level' => 'required',
             'user_group_id' => 'required|integer',
+            'data_penduduk_id' => 'required|integer',
             'jenis_kelamin' => 'required',
             'profil' => 'required',
         ]);
 
 
         $request['password'] = bcrypt($request['password']);
-        $data = UserGroup::where('id', $request['user_group_id'])->first();
+        $data = UserGroup::where('id', $request['user_group_id']);
+        $item = DataPenduduk::where('id', $request['data_penduduk_id']);
         $file = $request->file('profil');
         $fileName = $request->name . '.' . $file->getClientOriginalName();
 
@@ -123,6 +130,7 @@ class InfoUserController extends Controller
             'password' => $request-> password,
             'level' => $request-> level,
             'user_group_id' => $request->user_group_id,
+            'data_penduduk_id' => $request->data_penduduk_id,
             'jenis_kelamin' => $request->jenis_kelamin,
             'profil' => $image
         ]);

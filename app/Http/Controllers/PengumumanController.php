@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PengumumanController extends Controller
@@ -99,16 +100,13 @@ class PengumumanController extends Controller
     public function pengumuman(Request $request)
     {
         $user = Auth::user();
-        $per = (($request->per) ? $request->per : 10);
-        $page = (($request->page) ? $request->page - 1 : 0);
-        DB::statement('set @angka=0+' . $per * $page);
-
+        $pagination = 5;
         if ($user) {
             $roles = $user->role;
             $kelasIds = $roles->pluck('kelas_jurusans_id')->toArray();
             $pengumuman = Pengumuman::where(function ($q) use ($request) {
                 $q->where('jdl_pengumuman', 'LIKE', '%' . $request->input('search') . '%');
-            })->whereIn('kelas_jurusans_id', $kelasIds)->orderBy('id', 'asc')->paginate($per, ['*', DB::raw('@angka := @angka + 1 AS angka')]);
+            })->whereIn('kelas_jurusans_id', $kelasIds)->orderBy('id', 'asc')->paginate($pagination);
 
             return view('content.pages.siswa.pengumuman.index', compact('pengumuman'));
         }

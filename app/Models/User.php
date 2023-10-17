@@ -24,7 +24,8 @@ class User extends Authenticatable
         'password',
         'level',
         'jenis_kelamin',
-        'user_group_id'
+        'user_group_id',
+        'data_penduduk_id',
     ];
 
     /**
@@ -49,6 +50,14 @@ class User extends Authenticatable
     public function user_group()
     {
         return $this->belongsTo(UserGroup::class);
+    }
+    public function data_penduduk()
+    {
+        return $this->belongsTo(DataPenduduk::class);
+    }
+    public function saran()
+    {
+        return $this->hasMany(KotakSaran::class);
     }
     public static function booted()
     {

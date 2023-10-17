@@ -74,15 +74,19 @@
 <body>
 
 <div class="navbar">
-    <div class="brand">SIPADU</div>
+    <div class="brand">
+             <img class="ms-2" width="50px" src="{{asset('assets/img/LOGO S1.png')}}">
+        SIPADU</div>
     <div class="navbar-right">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#berita">Berita</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><button class="login-button btn btn-primary">Login</button></li>
+            <li>
+                <a class="login-button btn btn-primary" role="button" href="{{url('login')}}">Login</a>
+            </li>
         </ul>
-        
+
     </div>
 </div>
 <div class="card border-0 overflow-hidden ms-5 mt-1" >
@@ -99,6 +103,75 @@
                             <img class="ms-5" src="{{asset('assets/img/sipadu.png')}}" alt="">
                           </div>
                         </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+              <div class="container" style="margin-top: 10%">
+                <div class="row justify-content-center">
+                    <!-- Left Column for Image -->
+                    <div class="col-lg-4 col-xl-4 mt-5">
+                        <div class="card border-0 overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="bg-featured-blog">
+                                    <img class="ms-5" src="{{asset('assets/img/desc.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column for Paragraph -->
+                    <div class="col-lg-8 col-xl-8 mt-5">
+                        <div class="card border-0 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                   @foreach ($data as $datas)
+                                <div class="h1 fw-bolder mb-3">{{$datas->jdl_kita}}</div>
+                                <p class="mb-2">
+                                   {{$datas->desc_kita}}
+                                </p>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-top: 10%">
+              <div class="text-center"><h1>Data Penduduk</h1></div>
+              <div class="row mt-5">
+                  <div class="col-lg-3 col-md-6 mb-4">
+                      <div class="card">
+                          <img src="{{asset('assets/img/team-1.jpg')}}" class="card-img-top" alt="Profile Image 1">
+                          <div class="card-body">
+                              <h5 class="card-title">Name Data Penduduk</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 mb-4">
+                      <div class="card">
+                          <img src="{{asset('assets/img/team-2.jpg')}}" class="card-img-top" alt="Profile Image 2">
+                          <div class="card-body">
+                              <h5 class="card-title">Name Data Penduduk</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 mb-4">
+                      <div class="card">
+                          <img src="{{asset('assets/img/team-3.jpg')}}" class="card-img-top" alt="Profile Image 3">
+                          <div class="card-body">
+                              <h5 class="card-title">Name Data Penduduk</h5>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 mb-4">
+                      <div class="card">
+                          <img src="{{asset('assets/img/team-4.jpg')}}" class="card-img-top" alt="Profile Image 4">
+                          <div class="card-body">
+                              <h5 class="card-title">Name Data Penduduk</h5>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -254,16 +327,16 @@
             <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
                 <img width="80px" src="{{asset('assets/img/LOGO S1.png')}}">
               <h5 class="text-uppercase">SIPADU</h5>
-  
-              
+
+
             </div>
             <!--Grid column-->
-  
-  
+
+
             <!--Grid column-->
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Support</h5>
-  
+
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Help Centre</a>
@@ -280,11 +353,11 @@
               </ul>
             </div>
             <!--Grid column-->
-  
+
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Help and Solution</h5>
-  
+
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Talk to Support</a>
@@ -301,11 +374,11 @@
               </ul>
             </div>
             <!--Grid column-->
-  
+
             <!--Grid column-->
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Product</h5>
-  
+
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Update</a>
@@ -324,17 +397,17 @@
             <!--Grid column-->
           </div>
           <!--Grid row-->
- 
+
       </div>
       <!-- Grid container -->
-  
+
       <!-- Copyright -->
       <div
            class="text-center p-3"
            style="background-color: rgba(0, 0, 0, 0.2)"
            >
         © 2020 Copyright : Aplikasi Sipadu
-        
+
       </div>
       <!-- Copyright -->
     </footer>

@@ -3,15 +3,23 @@
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DatakkController;
+use App\Http\Controllers\DataPendatangController;
 use App\Http\Controllers\DataPendudukController;
+use App\Http\Controllers\DataPindahController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\KotakSaranController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\MelahirkanController;
+use App\Http\Controllers\MeninggalController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\TentangKitaController;
 use App\Http\Controllers\UserGroupController;
+use App\Models\TentangKita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +37,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', [HomeController::class, 'home']);
+    Route::get('/', [HomeController::class, 'Index']);
 
     Route::get('dashboard', function () {
         return view('dashboard');
@@ -66,6 +74,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-datapenduduk/{id}', [DataPendudukController::class, 'Update'])->name('update-datapenduduk');
     Route::DELETE('/delete-datapenduduk/{id}', [DataPendudukController::class, 'Delete'])->name('delete-datapenduduk');
 
+    //Laporan Data
+    Route::get('/laporan-datapenduduk', [LaporanController::class, 'laporandatapenduduk'])->name('laporan-datapenduduk');
+    Route::get('/laporan-datapenduduk-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatapenduduk'])->name('indexdatapenduduk');
+
     //Data KK
     Route::get('/data-kk', [DatakkController::class, 'Index'])->name('data-kk');
     Route::get('/get', [DatakkController::class, 'Get'])->name('getdata');
@@ -88,6 +100,47 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-berita/{id}', [BeritaController::class, 'edit'])->name('edit-berita');
     Route::post('/update-berita/{id}', [BeritaController::class, 'update'])->name('update-berita');
     Route::DELETE('/delete-berita/{id}', [BeritaController::class, 'delete'])->name('delete-berita');
+
+    //Data Melahirkan
+    Route::get('/melahirkan', [MelahirkanController::class, 'Index'])->name('melahirkan');
+    Route::get('/tambah-melahirkan', [MelahirkanController::class, 'Tambah'])->name('tambah-melahirkan');
+    Route::post('/send-melahirkan', [MelahirkanController::class, 'send'])->name('Send-melahirkan');
+    Route::get('/edit-melahirkan/{id}', [MelahirkanController::class, 'edit'])->name('edit-melahirkan');
+    Route::post('/update-melahirkan/{id}', [MelahirkanController::class, 'update'])->name('update-melahirkan');
+    Route::DELETE('/delete-melahirkan/{id}', [MelahirkanController::class, 'delete'])->name('delete-melahirkan');
+
+    //Data meninggal
+    Route::get('/meninggal', [MeninggalController::class, 'Index'])->name('meninggal');
+    Route::get('/tambah-meninggal', [MeninggalController::class, 'Tambah'])->name('tambah-meninggal');
+    Route::post('/send-meninggal', [MeninggalController::class, 'send'])->name('Send-meninggal');
+    Route::get('/edit-meninggal/{id}', [MeninggalController::class, 'edit'])->name('edit-meninggal');
+    Route::post('/update-meninggal/{id}', [MeninggalController::class, 'update'])->name('update-meninggal');
+    Route::DELETE('/delete-meninggal/{id}', [MeninggalController::class, 'delete'])->name('delete-meninggal');
+
+    //Data Pindah
+    Route::get('/pindah', [DataPindahController::class, 'Index'])->name('pindah');
+    Route::get('/tambah-pindah', [DataPindahController::class, 'Tambah'])->name('tambah-pindah');
+    Route::post('/send-pindah', [DataPindahController::class, 'send'])->name('Send-pindah');
+    Route::get('/edit-pindah/{id}', [DataPindahController::class, 'edit'])->name('edit-pindah');
+    Route::post('/update-pindah/{id}', [DataPindahController::class, 'update'])->name('update-pindah');
+    Route::DELETE('/delete-pindah/{id}', [DataPindahController::class, 'delete'])->name('delete-pindah');
+
+    //Data Pendatang
+    Route::get('/pendatang', [DataPendatangController::class, 'Index'])->name('pendatang');
+    Route::get('/tambah-pendatang', [DataPendatangController::class, 'Tambah'])->name('tambah-pendatang');
+    Route::post('/send-pendatang', [DataPendatangController::class, 'send'])->name('Send-pendatang');
+    Route::get('/edit-pendatang/{id}', [DataPendatangController::class, 'edit'])->name('edit-pendatang');
+    Route::post('/update-pendatang/{id}', [DataPendatangController::class, 'update'])->name('update-pendatang');
+    Route::DELETE('/delete-pendatang/{id}', [DataPendatangController::class, 'delete'])->name('delete-pendatang');
+
+    //Kotak Saran
+    Route::get('/kotaksaran', [KotakSaranController::class, 'Index'])->name('kotaksaran');
+    Route::get('/get', [KotakSaranController::class, 'Get'])->name('getdata');
+    Route::get('/tambah-kotaksaran', [KotakSaranController::class, 'Tambah'])->name('tambah-kotaksaran');
+    Route::post('/send-kotaksaran', [KotakSaranController::class, 'send'])->name('Send-kotaksaran');
+    Route::get('/edit-kotaksaran/{id}', [KotakSaranController::class, 'edit'])->name('edit-kotaksaran');
+    Route::post('/update-kotaksaran/{id}', [KotakSaranController::class, 'update'])->name('update-kotaksaran');
+    Route::DELETE('/delete-kotaksaran/{id}', [KotakSaranController::class, 'delete'])->name('delete-kotaksaran');
 
     //pengumuman
     Route::get('/pengumuman', [PengumumanController::class, 'Index'])->name('pengumuman');
@@ -131,29 +184,28 @@ Route::group(['middleware' => 'auth'], function () {
         return view('static-sign-up');
     })->name('sign-up');
 
-    Route::get('/logout', [SessionsController::class, 'destroy']);
     Route::get('/user-profile', [InfoUserController::class, 'profile'])->name('user-profile');
+    Route::get('/settings', [TentangKitaController::class, 'Tambah'])->name('settings');
+    Route::post('/send-settings', [TentangKitaController::class, 'send'])->name('Send-settings');
     // Route::post('/user-profile', [InfoUserController::class, 'store']);
     Route::get('/login', function () {
         return view('dashboard');
     })->name('sign-up');
+    Route::get('/logout', [SessionsController::class, 'destroy']);
 });
 
 
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/home', [HomeController::class, 'Index'])->name('home');
+    Route::get('/', [HomeController::class, 'Index'])->name('home');
     Route::get('/register', [RegisterController::class, 'create']);
     Route::post('/register', [RegisterController::class, 'store']);
-    Route::get('/login', [SessionsController::class, 'create']);
     Route::post('/session', [SessionsController::class, 'store']);
     Route::get('/login/forgot-password', [ResetController::class, 'create']);
     Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
     Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
     Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 
+    Route::get('/login', [SessionsController::class, 'create'])->name('login');
 });
 
-Route::get('/login', function () {
-    return view('session/login-session');
-})->name('login');
