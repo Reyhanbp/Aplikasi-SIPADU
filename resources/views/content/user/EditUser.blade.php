@@ -20,6 +20,7 @@
       <form action="{{ route ('update-User', $user->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
         <div class="card-body">
+            <input type="hidden" name="data_penduduk_id" class="form-control" value="{{ $user -> data_penduduk_id }}">
         <div class="col-12 d-flex justify-content-center" >
             <div class="mb-3">
               <label for="profil">
@@ -39,8 +40,8 @@
         <div class="col-6">
           <div class="mb-3">
             <label for="password" class="form-label required" > Password : </label>
-            <input type="password" name="password" id="password" placeholder="Password"  value=""
-              class="form-control" required autoComplete="off"  value="{{ $user -> password }}" />
+            <input type="password" name="password" id="password" placeholder="Password"
+              class="form-control" required autoComplete="off"  />
           </div>
         </div>
           <div class="col-6">

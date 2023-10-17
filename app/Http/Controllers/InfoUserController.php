@@ -54,13 +54,12 @@ class InfoUserController extends Controller
             'password' => 'required',
             'level' => 'required',
             'user_group_id' => 'required',
-            'data_penduduk_id' => 'required',
+            'data_penduduk_id' => 'nullable',
             'jenis_kelamin' => 'required',
-            'profil' => 'nullable|mimes:jpg,jpeg,png',
+            'profil' => 'nullable',
         ]);
 
         $request['password'] = bcrypt($request['password']);
-
 
         if ($request->hasFile('profil')) {
             // Hapus foto lama jika ada

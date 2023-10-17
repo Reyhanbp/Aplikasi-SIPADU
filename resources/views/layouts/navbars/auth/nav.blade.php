@@ -56,18 +56,32 @@
                 </li>
                 <hr class="horizontal dark mt-0">
                 <li>
-                <a class="dropdown-item" href="{{route('user-profile')}}" >
-                 <img src="{{asset('assets/img/user (2).png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
-                  <span class="align-middle">My Profile</span>
-                </a>
-              </li>
+                    <a class="dropdown-item" href="{{route('user-profile')}}" >
+                        <img src="{{asset('assets/img/user (2).png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
+                        <span class="align-middle">My Profile</span>
+                    </a>
+                </li>
                 <li>
-                <a class="dropdown-item" >
-                 <img src="{{asset('assets/img/megaphone.png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
-                  <span class="align-middle">Pengumuman</span>
-                </a>
-              </li>
-
+                @if (auth()->user()->level == "admin")
+                    <a class="dropdown-item" href="{{route('pengumuman')}}">
+                        <img src="{{asset('assets/img/megaphone.png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
+                        <span class="align-middle">Pengumuman</span>
+                    </a>
+                </li>
+                @else
+                <li>
+                    <a class="dropdown-item" >
+                        <img src="{{asset('assets/img/megaphone.png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
+                        <span class="align-middle">Pengumuman</span>
+                    </a>
+                </li>
+                @endif
+                <li>
+                    <a class="dropdown-item" href="{{route('settings')}}" >
+                        <img src="{{asset('assets/img/settings.png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
+                        <span class="align-middle">Settings</span>
+                    </a>
+                </li>
                 </ul>
             </li>
             </ul>

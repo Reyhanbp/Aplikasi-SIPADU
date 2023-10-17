@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="card">
-  <form action="{{ route('meninggal') }}">
+  <form action="{{ route('pendatang') }}">
     <div class="card-header ">
       <div class="d-flex justify-content-between">
           <div class="card-title text w-100 d-flex justify-content-between">
               <h4 class="fw-bold">
-                  <span class=" text-muted fw-light">Index Data Meninggal / </span> Data Meninggal
+                  <span class=" text-muted fw-light">Index Data Pendatang / </span> Data Pendatang
               </h4>
           </div>
            <div class="col-4 ms-md-3 pe-md-3 d-flex align-items-center">
@@ -17,7 +17,7 @@
             </div>
             </div>
             <div class="mt-3" >
-             <a class="btn btn-3 btn-primary w-200" type="button" style="width: 150px;"  href="{{ route ('tambah-meninggal') }}">
+             <a class="btn btn-3 btn-primary w-200" type="button" style="width: 150px;"  href="{{ route ('tambah-pendatang') }}">
                     <span class="btn-inner-icon"><i class="fas fa-plus"></i></span>
                 <span class="btn-inner-text"> Tambah</span>
                 </a>
@@ -45,26 +45,30 @@
                     <thead>
                         <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">NIK</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal Meninggal</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sebab Meninggal</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jenis Kelamin</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal Datang</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pelapor</th>
 
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                           @foreach ($data as $meninggal)
+                           @foreach ($data as $pendatang)
                         <tr>
                           <td>{{$loop->iteration }}</td>
-                          <td>{{$meninggal->data_penduduk->name }}</td>
-                          <td>{{$meninggal->tgl_meninggal }}</td>
-                          <td>{{$meninggal->sebab_meninggal }}</td>
+                          <td>{{$pendatang->NIK }}</td>
+                          <td>{{$pendatang->name }}</td>
+                          <td>{{$pendatang->jenis_kelamin }}</td>
+                          <td>{{$pendatang->tgl_datang }}</td>
+                          <td>{{$pendatang->data_penduduk->name }}</td>
 
                         <td class="text-center align-middle" >
-                            <form action="{{ route ('delete-meninggal', $meninggal->id) }}" method="POST">
+                            <form action="{{ route ('delete-pendatang', $pendatang->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a class="btn btn-warning" role="button"  href="{{ route ('edit-meninggal', $meninggal->id) }}">
+                                <a class="btn btn-warning" role="button"  href="{{ route ('edit-pendatang', $pendatang->id) }}">
                                     <i class="fas fa-edit"></i>
                                     Edit
                                  </a>

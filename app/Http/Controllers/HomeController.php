@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TentangKita;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,9 +11,9 @@ class HomeController extends Controller
     {
         return redirect('dashboard');
     }
-    public function Index(Request $request)
+    public function Index()
     {
-
-        return view('landingpages.home');
+        $data = TentangKita::all();
+        return view('landingpages.home', compact('data'));
     }
 }

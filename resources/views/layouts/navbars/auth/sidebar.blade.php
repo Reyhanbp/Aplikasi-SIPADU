@@ -58,7 +58,7 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link {{ (Request::is('pendatang') ? 'active' : '') }}" href="{{ url('pendatang') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Pendatang</span>
@@ -82,7 +82,7 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link {{ (Request::is('pindah') ? 'active' : '') }}" href="{{ url('pindah') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Pindah</span>
@@ -141,10 +141,10 @@
         </a>
       </li>
      <li class="collapse" id="collapseExample2" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link {{ (Request::is('laporan-datapenduduk') ? 'active' : '') }}" href="{{ url('laporan-datapenduduk') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
-              <span class="ms-3 nav-link-text ms-1">Total Penduduk</span>
+              <span class="ms-3 nav-link-text ms-1">Data Penduduk</span>
           </div>
         </a>
       </li>

@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-              $table->unsignedBigInteger('data_penduduk_id')->nullable();
-            $table->foreign('data_penduduk_id')->references('id')->on('data_penduduks')->onUpdate('restrict')->onDelete('restrict');
+        Schema::create('tentang_kitas', function (Blueprint $table) {
+            $table->id();
+            $table->string('jdl_kita');
+            $table->text('desc_kita');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('tentang_kitas');
     }
 };

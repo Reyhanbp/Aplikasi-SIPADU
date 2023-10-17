@@ -118,10 +118,12 @@
                     <div class="col-lg-8 col-xl-8 mt-5">
                         <div class="card border-0 overflow-hidden">
                             <div class="card-body p-4 p-md-5">
-                                <div class="h1 fw-bolder mb-3">Tentang Deskripsi Desa</div>
+                                   @foreach ($data as $datas)
+                                <div class="h1 fw-bolder mb-3">{{$datas->jdl_kita}}</div>
                                 <p class="mb-2">
-                                    Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non leo eu nisi fermentum interdum. Phasellus id justo eu ipsum dapibus semper a a tortor. Proin ullamcorper a libero at iaculis. Nunc eget risus eu purus dignissim bibendum. Sed ac nunc vitae sapien interdum rhoncus. Suspendisse cursus purus non aliquam vestibulum. Nulla facilisi. Vestibulum dapibus fringilla orci, a condimentum tortor. Fusce bibendum tristique malesuada. Vivamus et mauris a libero volutpat vehicula a non libero. Fusce nec nisl ut mi placerat consectetur ut ac arcu. In hac habitasse platea dictumst. Phasellus eget auctor justo. Nulla facilisi.
+                                   {{$datas->desc_kita}}
                                 </p>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -167,10 +169,7 @@
                   </div>
               </div>
           </div>
-
-
-             <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="footer">
+    <div class="footer">
     <!-- Footer -->
     <footer
             class="text-center text-lg-start text-white"

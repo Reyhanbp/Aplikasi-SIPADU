@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-              $table->unsignedBigInteger('data_penduduk_id')->nullable();
+        Schema::create('data_pindahs', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('data_penduduk_id')->nullable();
             $table->foreign('data_penduduk_id')->references('id')->on('data_penduduks')->onUpdate('restrict')->onDelete('restrict');
+            $table->date('tgl_pindah');
+            $table->string('sebab_pindah');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('data_pindahs');
     }
 };
