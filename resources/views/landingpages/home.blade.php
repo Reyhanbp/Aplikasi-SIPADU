@@ -44,6 +44,14 @@
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            transition: color 0.5s;
+        }
+
+        .navbar-right a:hover {
+          background-color: blue; 
+          color: #fff;
+          border-radius: 30px;
+          padding:10px 20px; 
         }
 
         /* Style the login button */
@@ -60,9 +68,7 @@
             display: inline-block;
             margin-right: 20px;
         }
-        .footer {
-            border-radius: 50px;
-        }
+        
     </style>
 </head>
 <body>
@@ -86,6 +92,7 @@
                               <div class="p-4 p-md-5">
                                   <div class="h1 fw-bolder mb-3">Selamat Datang Di Desa</div>
                                   <p class="mb-2">Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda</p>    
+                                  <button class="btn btn-primary">next-></button>
                               </div>
                           </div>
                           <div class="col-lg-5 col-xl-7"><div class="bg-featured-blog">
@@ -95,7 +102,141 @@
                       </div>
                   </div>
               </div>
-             <!-- Remove the container if you want to extend the Footer to full width. -->
+
+<div>
+  <div class="p-4 p-md-5">
+  <h1 class="berita fw-bolder p-5"> Berita Terkini</h1>
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image" style="height: 500px">
+                <div class="card-body">
+                    <h5 class="card-title">Card 1</h5>
+                    <p class="card-text">lorem</p>
+                    <button class=" btn btn-primary">Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top " alt="Card Image"  style="height: 500px " >
+                <div class="card-body">
+                    <h5 class="card-title">Card 2</h5>
+                    <p class="card-text">lorem</p>
+                    <button class=" btn btn-primary">Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image" style="height: 500px">
+                <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">lorem</p>
+                    <button class=" btn btn-primary">Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+ 
+<div>
+  <div class="p-4 p-md-5">
+    <h1 class="gallery fw-bolder p-5"> Gallery Terkini</h1>
+    
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="card border-0">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                  <div class="card-body">
+                      <h5 class="card-title">Card 1</h5>
+                      <p class="card-text">hwehehehe</p>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="card border-0">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                  <div class="card-body">
+                      <h5 class="card-title">Card 2</h5>
+                      <p class="card-text">hohohiho</p>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="card border-0">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image " >
+                  <div class="card-body">
+                      <h5 class="card-title">Card 3</h5>
+                      <p class="card-text">hohihohiho</p>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="card border-0">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                  <div class="card-body">
+                      <h5 class="card-title">Card 4</h5>
+                      <p class="card-text">hehrheha</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Card 5</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Card 6</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Card 7</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card border-0">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Card 8</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+  
+</div>
+
 <div class="footer">
     <!-- Footer -->
     <footer
@@ -110,8 +251,8 @@
           <!--Grid row-->
           <div class="row">
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <img width="100px" src="{{asset('assets/img/LOGO S1.png')}}">
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                <img width="80px" src="{{asset('assets/img/LOGO S1.png')}}">
               <h5 class="text-uppercase">SIPADU</h5>
   
               
@@ -141,7 +282,7 @@
             <!--Grid column-->
   
             <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Help and Solution</h5>
   
               <ul class="list-unstyled mb-0">
@@ -167,16 +308,16 @@
   
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="#!" class="text-white">Link 1</a>
+                  <a href="#!" class="text-white">Update</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Link 2</a>
+                  <a href="#!" class="text-white">Security</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Link 3</a>
+                  <a href="#!" class="text-white">Beta Test</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Link 4</a>
+                  <a href="#!" class="text-white">Pricing Product</a>
                 </li>
               </ul>
             </div>
