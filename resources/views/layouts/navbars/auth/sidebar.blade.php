@@ -149,7 +149,7 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample2" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+          <a class="nav-link {{ (Request::is('laporan-datapendatang') ? 'active' : '') }}" href="{{ url('laporan-datapendatang') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Pendatang</span>
@@ -157,15 +157,15 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample2" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link {{ (Request::is('laporan-datapindah') ? 'active' : '') }}" href="{{ url('laporan-datapindah') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
-              <span class="ms-3 nav-link-text ms-1">Tetap</span>
+              <span class="ms-3 nav-link-text ms-1">Pindah</span>
           </div>
         </a>
       </li>
       <li class="collapse" id="collapseExample2" >
-        <a class="nav-link" href="{{ url('static-sign-up') }}">
+        <a class="nav-link {{ (Request::is('laporan-datameninggal') ? 'active' : '') }}" href="{{ url('laporan-datameninggal') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Meninggal</span>
@@ -173,7 +173,8 @@
         </a>
       </li>
       <li class="collapse" id="collapseExample2" >
-        <a class="nav-link " href="{{ url('melahirkan') }}">
+        <a class="nav-link {{ (Request::is('laporan-datamelahirkan') ? 'active' : '') }}"
+            href="{{ url('laporan-datamelahirkan') }}">
            <div class="ms-4">
             <i class="fas fa-circle"></i>
               <span class="ms-3 nav-link-text ms-1">Melahirkan</span>

@@ -19,9 +19,9 @@
             </div>
             </div>
             <div class="mt-3" >
-            <a class="btn btn-3 btn-primary w-200" type="button" style="width: 150px;" onclick="">
-                <span class="btn-inner-icon"><i class="fas fa-plus"></i></span>
-                <span class="btn-inner-text"> Tambah</span>
+            <a class="btn btn-3 btn-success w-200" type="button" style="width: 150px;" role="button" onclick="cetak('{{ $tglawal }}', '{{ $tglakhir }}')">
+                <span class="btn-inner-icon"><i class="fas fa-save me-2"></i></span>
+                <span class="btn-inner-text"> Cetak</span>
             </a>
 
             </div>
@@ -59,4 +59,13 @@
     </div>
 </div>
 </div>
+
+<script>
+    function cetak(tglawal, tglakhir) {
+        var url = "{{ route('cetakdatapenduduk', ['tglawal' => 'tglawal', 'tglakhir' => 'tglakhir']) }}";
+        url = url.replace('tglawal', tglawal).replace('tglakhir', tglakhir);
+        window.location = url;
+    }
+</script>
+
     @endsection
