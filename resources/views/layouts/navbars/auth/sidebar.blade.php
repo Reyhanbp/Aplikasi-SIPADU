@@ -129,6 +129,60 @@
           </div>
         </a>
       </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false"
+        aria-controls="collapseExample2">
+        <div class="ms-2">
+        <i class="fas fa-book"></i>
+        <span class="ms-3 nav-link-text ms-1">Surat Domisili</span>
+        </div>
+        </a>
+        </li>
+        <li class="collapse" id="collapseExample2" >
+        <a class="nav-link {{ (Request::is('laporan-datapenduduk') ? 'active' : '') }}"
+            href="{{ url('laporan-datapenduduk') }}">
+            <div class="ms-4">
+                <i class="fas fa-circle"></i>
+                <span class="ms-3 nav-link-text ms-1">Data Penduduk</span>
+            </div>
+        </a>
+    </li>
+    <li class="collapse" id="collapseExample2">
+        <a class="nav-link {{ (Request::is('laporan-datapendatang') ? 'active' : '') }}"
+            href="{{ url('laporan-datapendatang') }}">
+            <div class="ms-4">
+                <i class="fas fa-circle"></i>
+                <span class="ms-3 nav-link-text ms-1">Pendatang</span>
+            </div>
+        </a>
+    </li>
+    <li class="collapse" id="collapseExample2">
+        <a class="nav-link {{ (Request::is('laporan-datapindah') ? 'active' : '') }}"
+            href="{{ url('laporan-datapindah') }}">
+            <div class="ms-4">
+                <i class="fas fa-circle"></i>
+                <span class="ms-3 nav-link-text ms-1">Pindah</span>
+            </div>
+        </a>
+    </li>
+    <li class="collapse" id="collapseExample2">
+        <a class="nav-link {{ (Request::is('laporan-datameninggal') ? 'active' : '') }}"
+            href="{{ url('laporan-datameninggal') }}">
+            <div class="ms-4">
+                <i class="fas fa-circle"></i>
+                <span class="ms-3 nav-link-text ms-1">Meninggal</span>
+            </div>
+        </a>
+    </li>
+    <li class="collapse" id="collapseExample2">
+        <a class="nav-link {{ (Request::is('domisili-datamelahirkan') ? 'active' : '') }}"
+            href="{{ url('domisili-datamelahirkan') }}">
+            <div class="ms-4">
+                <i class="fas fa-circle"></i>
+                <span class="ms-3 nav-link-text ms-1">Melahirkan</span>
+            </div>
+        </a>
+    </li>
       <li class="nav-item mt-3">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Laporan</h6>
       </li>

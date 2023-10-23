@@ -70,7 +70,7 @@
                 </li>
                 @else
                 <li>
-                    <a class="dropdown-item" >
+                    <a class="dropdown-item" href="{{route('detailpengumuman')}}">
                         <img src="{{asset('assets/img/megaphone.png')}}" alt="profile" class="avatar avatar-sm bg-gradient-white  me-3">
                         <span class="align-middle">Pengumuman</span>
                     </a>

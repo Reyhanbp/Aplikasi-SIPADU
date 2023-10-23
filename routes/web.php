@@ -6,6 +6,7 @@ use App\Http\Controllers\DatakkController;
 use App\Http\Controllers\DataPendatangController;
 use App\Http\Controllers\DataPendudukController;
 use App\Http\Controllers\DataPindahController;
+use App\Http\Controllers\DomisiliController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
@@ -74,6 +75,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-datapenduduk/{id}', [DataPendudukController::class, 'Update'])->name('update-datapenduduk');
     Route::DELETE('/delete-datapenduduk/{id}', [DataPendudukController::class, 'Delete'])->name('delete-datapenduduk');
 
+    //Surat Data
+
     //Laporan Data
         //data Penduduk
         Route::get('/laporan-datapenduduk', [LaporanController::class, 'laporandatapenduduk'])->name('laporan-datapenduduk');
@@ -93,6 +96,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/laporan-datameninggal-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatameninggal'])->name('indexdatameninggal');
         Route::get('/cetakdatameninggal/{tglawal}/{tglakhir}', [LaporanController::class, 'cetakdatameninggal'])->name('cetakdatameninggal');
         //data melahirkan
+        Route::post('/cetak-datamelahirkan', [DomisiliController::class, 'cetakMelahirkan'])->name('cetakmelahirkan');
+        Route::get('/domisili-datamelahirkan', [DomisiliController::class, 'domisilidatamelahirkan'])->name('domisili-datamelahirkan');
         Route::get('/laporan-datamelahirkan', [LaporanController::class, 'laporandatamelahirkan'])->name('laporan-datamelahirkan');
         Route::get('/laporan-datamelahirkan-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatamelahirkan'])->name('indexdatamelahirkan');
         Route::get('/cetakdatamelahirkan/{tglawal}/{tglakhir}', [LaporanController::class, 'cetakdatamelahirkan'])->name('cetakdatamelahirkan');
@@ -163,6 +168,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //pengumuman
     Route::get('/pengumuman', [PengumumanController::class, 'Index'])->name('pengumuman');
+    Route::get('/detailpengumuman', [PengumumanController::class, 'pengumuman'])->name('detailpengumuman');
     Route::get('/get', [PengumumanController::class, 'Get'])->name('getdata');
     Route::get('/tambah-pengumuman', [PengumumanController::class, 'Tambah'])->name('tambah-pengumuman');
     Route::post('/send-pengumuman', [PengumumanController::class, 'send'])->name('Send-pengumuman');

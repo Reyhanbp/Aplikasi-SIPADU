@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\TentangKita;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class HomeController extends Controller
     public function Index()
     {
         $data = TentangKita::all();
-        return view('landingpages.home', compact('data'));
+        $datas = Gallery::all();
+        return view('landingpages.home', compact('data','datas'));
     }
 }

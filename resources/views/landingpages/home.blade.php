@@ -48,10 +48,10 @@
         }
 
         .navbar-right a:hover {
-          background-color: blue; 
+          background-color: blue;
           color: #fff;
           border-radius: 30px;
-          padding:10px 20px; 
+          padding:10px 20px;
         }
 
         /* Style the login button */
@@ -68,7 +68,7 @@
             display: inline-block;
             margin-right: 20px;
         }
-        
+
     </style>
 </head>
 <body>
@@ -95,7 +95,7 @@
                           <div class="col-lg-6 col-xl-5 py-lg-5">
                               <div class="p-4 p-md-5">
                                   <div class="h1 fw-bolder mb-3">Selamat Datang Di Desa</div>
-                                  <p class="mb-2">Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda</p>    
+                                  <p class="mb-2">Sebuah aplikasi sistem pendataan penduduk untuk membantu amankan data penduduk anda</p>
                                   <button class="btn btn-primary">next-></button>
                               </div>
                           </div>
@@ -125,10 +125,10 @@
                     <div class="col-lg-8 col-xl-8 mt-5">
                         <div class="card border-0 overflow-hidden">
                             <div class="card-body p-4 p-md-5">
-                                   @foreach ($data as $datas)
-                                <div class="h1 fw-bolder mb-3">{{$datas->jdl_kita}}</div>
+                                   @foreach ($data as $data)
+                                <div class="h1 fw-bolder mb-3">{{$data->jdl_kita}}</div>
                                 <p class="mb-2">
-                                   {{$datas->desc_kita}}
+                                   {{$data->desc_kita}}
                                 </p>
                                 @endforeach
                             </div>
@@ -177,8 +177,8 @@
               </div>
 
 <div>
-  <div class="p-4 p-md-5">
-  <h1 class="berita fw-bolder p-5"> Berita Terkini</h1>
+  <div class="p-4 p-md-4">
+  <h1 class="berita fw-bolder p-4"> Berita Terkini</h1>
   <div class="container">
     <div class="row">
         <div class="col-lg-4 mb-4">
@@ -217,97 +217,43 @@
 </div>
 
 </div>
- 
+
 <div>
-  <div class="p-4 p-md-5">
-    <h1 class="gallery fw-bolder p-5"> Gallery Terkini</h1>
-    
-    <div class="container">
+  <div class="p-4 p-md-4">
+    <h1 class="gallery fw-bolder p-4"> Gallery Terkini</h1>
+
+    <div class="container ">
       <div class="row">
-          <div class="col-lg-3 col-md-6 mb-4">
-              <div class="card border-0">
-                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                  <div class="card-body">
-                      <h5 class="card-title">Card 1</h5>
-                      <p class="card-text">hwehehehe</p>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="col-lg-3 col-md-6 mb-4">
-              <div class="card border-0">
-                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                  <div class="card-body">
-                      <h5 class="card-title">Card 2</h5>
-                      <p class="card-text">hohohiho</p>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="col-lg-3 col-md-6 mb-4">
-              <div class="card border-0">
-                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image " >
-                  <div class="card-body">
-                      <h5 class="card-title">Card 3</h5>
-                      <p class="card-text">hohihohiho</p>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="col-lg-3 col-md-6 mb-4">
-              <div class="card border-0">
-                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                  <div class="card-body">
-                      <h5 class="card-title">Card 4</h5>
-                      <p class="card-text">hehrheha</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
+               @foreach ($datas->take(8) as $index => $datass)
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">Card 5</h5>
-                    <p class="card-text"></p>
+                <img src="{{asset('/storage/'.$datass->gallery)}}" class="card-img-top" alt="Card Image" style="width: 250px; height: 250px;" >
+                <div class="card-body"  data-bs-toggle="modal" data-bs-target="#exampleModal{{ $index }}">
+                    <h5 class="card-title" >{{$datass->jdl_gallery}}</h5>
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">Card 6</h5>
-                    <p class="card-text"></p>
+         <div class="modal fade" id="exampleModal{{ $index }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{$datass->jdl_gallery}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   <img src="{{asset('/storage/'.$datass->gallery)}}" class="card-img-top" alt="Card Image" >
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">Card 7</h5>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">Card 8</h5>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
-    
+
   </div>
-  
+
 </div>
 
 <div class="footer">
@@ -413,6 +359,9 @@
     </footer>
     <!-- Footer -->
   </div>
+
+    <!-- Modal -->
+
   <!-- End of .container -->
 </body>
 </html>

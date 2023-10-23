@@ -18,6 +18,15 @@ class PengumumanController extends Controller
         })->orderBy('id', 'asc')->paginate($pagination);
         return view('content.pengumuman.Pengumuman', compact('data'));
     }
+     public function pengumuman(Request $request)
+    {
+        // $data = Pengumuman::all();
+        $pagination = 5;
+        $pengumuman = Pengumuman::where(function ($q) use ($request) {
+            $q->where('jdl_pengumuman', 'LIKE', '%' . $request->search . '%');
+        })->orderBy('id', 'asc')->paginate($pagination);
+        return view('content.pengumuman.detail', compact('pengumuman'));
+    }
     public function tambah()
     {
         $data = Pengumuman::all();
@@ -97,18 +106,5 @@ class PengumumanController extends Controller
         $pengumuman = Pengumuman::find($id);
         return view('content.pages.admin.pengumuman.DetailPengumuman', compact('pengumuman'));
     }
-    public function pengumuman(Request $request)
-    {
-        $user = Auth::user();
-        $pagination = 5;
-        if ($user) {
-            $roles = $user->role;
-            $kelasIds = $roles->pluck('kelas_jurusans_id')->toArray();
-            $pengumuman = Pengumuman::where(function ($q) use ($request) {
-                $q->where('jdl_pengumuman', 'LIKE', '%' . $request->input('search') . '%');
-            })->whereIn('kelas_jurusans_id', $kelasIds)->orderBy('id', 'asc')->paginate($pagination);
 
-            return view('content.pages.siswa.pengumuman.index', compact('pengumuman'));
-        }
-    }
 }
