@@ -83,4 +83,9 @@ class GalleryController extends Controller
         Gallery::destroy($id);
         return redirect()->route('gallery')->with('message', 'Data Berhasil Di Hapus Galery');
     }
+
+    public function detail()
+    {
+        return view('landingpages.gallery');
+    }
 }
