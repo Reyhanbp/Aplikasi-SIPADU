@@ -93,4 +93,16 @@ class BeritaController extends Controller
         Berita::destroy($id);
         return redirect()->route('berita')->with('message', 'Data Berhasil Di Hapus Berita');
     }
+
+    // tes detail berita
+    public function detail()
+    {
+        return view('landingpages.detailberita');
+    }
+
+    // tes UI
+    public function berita()
+    {
+        return view('landingpages.berita');
+    }
 }
