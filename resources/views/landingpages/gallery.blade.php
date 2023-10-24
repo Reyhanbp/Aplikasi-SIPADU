@@ -83,6 +83,82 @@
             </li>
         </ul>
     </div>
-
-    
 </div>
+
+<div class="footer">
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white pt-3 "
+            style="background-color: #161C28
+            "
+            >
+      <!-- Grid container -->
+      <div class="container p-4 pb-3">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-7 col-md-6 mb-4 mb-md-0 ">
+                <img width="80px" src="{{asset('assets/img/LOGO S1.png')}}">
+              <h5 class="text-uppercase">SIPADU</h5>
+            </div>
+            <!--Grid column-->
+
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Address</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <p  class="text-white">JL Dukuh Menanggal Surabaya </p>
+                </li>
+                {{-- <li>
+                  <a href="#!" class="text-white">Account information</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">About</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Contact Us</a>
+                </li> --}}
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Contact Info</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <p class="text-white">+62 895-3302-85700</p>
+                </li>
+                <li>
+                  <p class="text-white">reyhan@gmail.com</p>
+                </li>
+                <li>
+                  <p  class="text-white"></a>
+                </li>
+                {{-- <li>
+                  <p class="text-white">Covid Responde</p>
+                </li> --}}
+              </ul>
+            </div>
+          </div>
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2020 Copyright : Aplikasi Sipadu
+
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>

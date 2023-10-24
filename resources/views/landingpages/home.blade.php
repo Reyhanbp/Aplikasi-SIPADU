@@ -68,7 +68,11 @@
             display: inline-block;
             margin-right: 20px;
         }
-
+        .navigation{
+            font-size: 40px;
+            text-decoration: 0;
+            color: black;
+        }
     </style>
 
 </head>
@@ -180,7 +184,7 @@
 
     <div>
   <div class="p-4 p-md-4">
-  <h1 class="berita fw-bolder p-4"> Berita Terkini</h1>
+  <a href="{{route('beritahome')}}" class="navigation fw-bolder p-4"> Berita Terkini</a>
   <div class="container">
     <div class="row">
         @foreach ($datasan->take(3) as $index => $datassan)
@@ -202,7 +206,7 @@
 
 <div>
   <div class="p-4 p-md-4">
-    <h1 class="gallery fw-bolder p-4"> Gallery Terkini</h1>
+    <a href="{{url('gallery')}}" class="navigation fw-bolder p-4 "> Gallery Terkini</a>
 
     <div class="container ">
       <div class="row">
@@ -250,7 +254,7 @@
           <!--Grid row-->
           <div class="row">
             <!--Grid column-->
-            <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-7 col-md-6 mb-4 mb-md-0 ">
                 <img width="80px" src="{{asset('assets/img/LOGO S1.png')}}">
               <h5 class="text-uppercase">SIPADU</h5>
             </div>
@@ -259,13 +263,13 @@
 
             <!--Grid column-->
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Support</h5>
+              <h5 class="text-uppercase">Address</h5>
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="#!" class="text-white">Help Centre</a>
+                  <p  class="text-white">JL Dukuh Menanggal Surabaya </p>
                 </li>
-                <li>
+                {{-- <li>
                   <a href="#!" class="text-white">Account information</a>
                 </li>
                 <li>
@@ -273,28 +277,28 @@
                 </li>
                 <li>
                   <a href="#!" class="text-white">Contact Us</a>
-                </li>
+                </li> --}}
               </ul>
             </div>
             <!--Grid column-->
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Help and Solution</h5>
+              <h5 class="text-uppercase">Contact Info</h5>
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="#!" class="text-white">Talk to Support</a>
+                  <p class="text-white">+62 895-3302-85700</p>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Support docs</a>
+                  <p class="text-white">reyhan@gmail.com</p>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">System status</a>
+                  <p  class="text-white"></a>
                 </li>
-                <li>
-                  <a href="#!" class="text-white">Covid Responde</a>
-                </li>
+                {{-- <li>
+                  <p class="text-white">Covid Responde</p>
+                </li> --}}
               </ul>
             </div>
           </div>
