@@ -224,7 +224,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'guest'], function () {
     route::get('/detailberita', [BeritaController::class,'detail']);
     route::get('/detailgallery', [GalleryController::class,'detail']);
-    route::get('/listberita', [BeritaController::class,'berita']);
+    route::get('/listberita', [BeritaController::class,'berita'])->name('beritahome');
     Route::get('/', [HomeController::class, 'Index'])->name('home');
     Route::get('/register', [RegisterController::class, 'create']);
     Route::post('/register', [RegisterController::class, 'store']);
