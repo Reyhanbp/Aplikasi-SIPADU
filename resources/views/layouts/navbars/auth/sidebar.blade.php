@@ -139,8 +139,8 @@
         </a>
         </li>
         <li class="collapse" id="collapseExample2" >
-        <a class="nav-link {{ (Request::is('laporan-datapenduduk') ? 'active' : '') }}"
-            href="{{ url('laporan-datapenduduk') }}">
+        <a class="nav-link {{ (Request::is('domisili-datapenduduk') ? 'active' : '') }}"
+            href="{{ url('domisili-datapenduduk') }}">
             <div class="ms-4">
                 <i class="fas fa-circle"></i>
                 <span class="ms-3 nav-link-text ms-1">Data Penduduk</span>
@@ -148,8 +148,8 @@
         </a>
     </li>
     <li class="collapse" id="collapseExample2">
-        <a class="nav-link {{ (Request::is('laporan-datapendatang') ? 'active' : '') }}"
-            href="{{ url('laporan-datapendatang') }}">
+        <a class="nav-link {{ (Request::is('domisili-datapendatang') ? 'active' : '') }}"
+            href="{{ url('domisili-datapendatang') }}">
             <div class="ms-4">
                 <i class="fas fa-circle"></i>
                 <span class="ms-3 nav-link-text ms-1">Pendatang</span>
@@ -157,8 +157,8 @@
         </a>
     </li>
     <li class="collapse" id="collapseExample2">
-        <a class="nav-link {{ (Request::is('laporan-datapindah') ? 'active' : '') }}"
-            href="{{ url('laporan-datapindah') }}">
+        <a class="nav-link {{ (Request::is('domisili-datapindah') ? 'active' : '') }}"
+            href="{{ url('domisili-datapindah') }}">
             <div class="ms-4">
                 <i class="fas fa-circle"></i>
                 <span class="ms-3 nav-link-text ms-1">Pindah</span>
@@ -166,8 +166,8 @@
         </a>
     </li>
     <li class="collapse" id="collapseExample2">
-        <a class="nav-link {{ (Request::is('laporan-datameninggal') ? 'active' : '') }}"
-            href="{{ url('laporan-datameninggal') }}">
+        <a class="nav-link {{ (Request::is('domisili-datameninggal') ? 'active' : '') }}"
+            href="{{ url('domisili-datameninggal') }}">
             <div class="ms-4">
                 <i class="fas fa-circle"></i>
                 <span class="ms-3 nav-link-text ms-1">Meninggal</span>

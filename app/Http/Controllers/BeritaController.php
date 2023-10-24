@@ -95,9 +95,15 @@ class BeritaController extends Controller
     }
 
     // tes detail berita
-    public function detail()
+    public function detail($id)
     {
-        return view('landingpages.detailberita');
+        $berita = Berita::find($id);
+
+        if ($berita) {
+            return view('landingpages.detailberita', compact('berita'));
+        } else {
+            return redirect()->back()->with('error', 'Berita tidak ditemukan.');
+        }
     }
 
     // tes UI

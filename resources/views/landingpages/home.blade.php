@@ -91,7 +91,7 @@
     </div>
 </div>
 <div class="card border-0 overflow-hidden ms-5 mt-1" >
-                  <div class="card-body p-0">
+            <div class="card-body p-0">
                       <div class="row gx-0">
                           <div class="col-lg-6 col-xl-5 py-lg-5">
                               <div class="p-4 p-md-5">
@@ -141,79 +141,60 @@
               <div class="text-center"><h1>Data Penduduk</h1></div>
               <div class="row mt-5">
                   <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card">
-                          <img src="{{asset('assets/img/team-1.jpg')}}" class="card-img-top" alt="Profile Image 1">
-                          <div class="card-body">
-                              <h5 class="card-title">Name Data Penduduk</h5>
-                          </div>
-                      </div>
+                      <div class="card bg-primary">
+                        <div class="card-body">
+                            <h1 class="card-text text-white text-center">{{$penduduk}}</h1>
+                            <p class="card-text text-center text-white"><small class="text-white">Jumlah Data</small></p>
+                        </div>
+                        <h5 class="card-title text-white text-center">DATA PENDUDUK</h5>
+                    </div>
                   </div>
-
                   <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card">
-                          <img src="{{asset('assets/img/team-2.jpg')}}" class="card-img-top" alt="Profile Image 2">
-                          <div class="card-body">
-                              <h5 class="card-title">Name Data Penduduk</h5>
-                          </div>
-                      </div>
+                      <div class="card bg-primary">
+                        <div class="card-body">
+                            <h1 class="card-text text-white text-center">{{$datakk}}</h1>
+                            <p class="card-text text-center text-white"><small class="text-white">Jumlah Data</small></p>
+                        </div>
+                        <h5 class="card-title text-white text-center">DATA KARTU KELUARGA</h5>
+                    </div>
                   </div>
-
                   <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card">
-                          <img src="{{asset('assets/img/team-3.jpg')}}" class="card-img-top" alt="Profile Image 3">
-                          <div class="card-body">
-                              <h5 class="card-title">Name Data Penduduk</h5>
-                          </div>
-                      </div>
+                      <div class="card bg-primary">
+                        <div class="card-body">
+                            <h1 class="card-text text-white text-center">{{$pendatang}}</h1>
+                            <p class="card-text text-center text-white"><small class="text-white">Jumlah Data</small></p>
+                        </div>
+                        <h5 class="card-title text-white text-center">DATA PENDATANG</h5>
+                    </div>
                   </div>
-
                   <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card">
-                          <img src="{{asset('assets/img/team-4.jpg')}}" class="card-img-top" alt="Profile Image 4">
-                          <div class="card-body">
-                              <h5 class="card-title">Name Data Penduduk</h5>
-                          </div>
-                      </div>
+                      <div class="card bg-primary">
+                        <div class="card-body">
+                            <h1 class="card-text text-white text-center">{{$pindah}}</h1>
+                            <p class="card-text text-center text-white"><small class="text-white">Jumlah Data</small></p>
+                        </div>
+                        <h5 class="card-title text-white text-center">DATA PINDAH</h5>
+                    </div>
                   </div>
               </div>
 
-<div>
+    <div>
   <div class="p-4 p-md-4">
   <h1 class="berita fw-bolder p-4"> Berita Terkini</h1>
   <div class="container">
     <div class="row">
+        @foreach ($datasan->take(3) as $index => $datassan)
         <div class="col-lg-4 mb-4">
             <div class="card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image" style="height: 300px">
+                <img src="{{asset('/storage/'.$datassan->foto)}}" class="card-img-top" alt="Card Image" style="height: 300px">
                 <div class="card-body">
-                    <h5 class="card-title">Card 1</h5>
-                    <p class="card-text">lorem</p>
-                    <button class=" btn btn-primary">Selengkapnya</button>
+                    <h5 class="card-title">{{$datassan->jdl_berita}}</h5>
+                    <p class="card-text">{{ implode(' ', array_slice(explode(' ', $datassan->desc_berita), 0, 8)) }}</p>
+                    <a type="button" href="{{ route('detailberita', ['id' => $datassan->id]) }}" class="btn btn-primary" >Selengkapnya</a type="button" href="">
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top " alt="Card Image"  style="height: 300px " >
-                <div class="card-body">
-                    <h5 class="card-title">Card 2</h5>
-                    <p class="card-text">lorem</p>
-                    <button class=" btn btn-primary">Selengkapnya</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="card border-0">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image" style="height: 300px">
-                <div class="card-body">
-                    <h5 class="card-title">Card 3</h5>
-                    <p class="card-text">lorem</p>
-                    <button class=" btn btn-primary">Selengkapnya</button>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
@@ -228,8 +209,8 @@
                @foreach ($datas->take(8) as $index => $datass)
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card border-0">
-                <img src="{{asset('/storage/'.$datass->gallery)}}" class="card-img-top" alt="Card Image" style="width: 250px; height: 250px;" >
-                <div class="card-body"  data-bs-toggle="modal" data-bs-target="#exampleModal{{ $index }}">
+                <img src="{{asset('/storage/'.$datass->gallery)}}" class="card-img-top"  data-bs-toggle="modal" data-bs-target="#exampleModal{{ $index }}" alt="Card Image" style="width: 250px; height: 250px;" >
+                <div class="card-body" >
                     <h5 class="card-title" >{{$datass->jdl_gallery}}</h5>
                 </div>
             </div>
@@ -244,9 +225,7 @@
                 <div class="modal-body">
                    <img src="{{asset('/storage/'.$datass->gallery)}}" class="card-img-top" alt="Card Image" >
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                
                 </div>
             </div>
         </div>

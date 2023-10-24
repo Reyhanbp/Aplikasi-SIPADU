@@ -79,19 +79,27 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Laporan Data
         //data Penduduk
+        Route::post('/cetak-datapenduduk', [DomisiliController::class, 'cetakpenduduk'])->name('cetakpenduduk');
+        Route::get('/domisili-datapenduduk', [DomisiliController::class, 'domisilidatapenduduk'])->name('domisili-datapenduduk');
         Route::get('/laporan-datapenduduk', [LaporanController::class, 'laporandatapenduduk'])->name('laporan-datapenduduk');
         Route::get('/laporan-datapenduduk-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatapenduduk'])->name('indexdatapenduduk');
         Route::get('/cetakdatapenduduk/{tglawal}/{tglakhir}', [LaporanController::class, 'cetakdatapenduduk'])->name('cetakdatapenduduk');
 
         //data pendatang
+        Route::post('/cetak-datapendatang', [DomisiliController::class, 'cetakpendatang'])->name('cetakpendatang');
+        Route::get('/domisili-datapendatang', [DomisiliController::class, 'domisilidatapendatang'])->name('domisili-datapendatang');
         Route::get('/laporan-datapendatang', [LaporanController::class, 'laporandatapendatang'])->name('laporan-datapendatang');
         Route::get('/laporan-datapendatang-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatapendatang'])->name('indexdatapendatang');
         Route::get('/cetakdatapendatang/{tglawal}/{tglakhir}', [LaporanController::class, 'cetakdatapendatang'])->name('cetakdatapendatang');
         //data pindah
+        Route::post('/cetak-datapindah', [DomisiliController::class, 'cetakpindah'])->name('cetakpindah');
+        Route::get('/domisili-datapindah', [DomisiliController::class, 'domisilidatapindah'])->name('domisili-datapindah');
         Route::get('/laporan-datapindah', [LaporanController::class, 'laporandatapindah'])->name('laporan-datapindah');
         Route::get('/laporan-datapindah-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatapindah'])->name('indexdatapindah');
         Route::get('/cetakdatapindah/{tglawal}/{tglakhir}', [LaporanController::class, 'cetakdatapindah'])->name('cetakdatapindah');
         //data meninggal
+        Route::post('/cetak-datameninggal', [DomisiliController::class, 'cetakmeninggal'])->name('cetakmeninggal');
+        Route::get('/domisili-datameninggal', [DomisiliController::class, 'domisilidatameninggal'])->name('domisili-datameninggal');
         Route::get('/laporan-datameninggal', [LaporanController::class, 'laporandatameninggal'])->name('laporan-datameninggal');
         Route::get('/laporan-datameninggal-filter/{tglawal}/{tglakhir}', [LaporanController::class, 'indexdatameninggal'])->name('indexdatameninggal');
         Route::get('/cetakdatameninggal/{tglawal}/{tglakhir}', [LaporanController::class, 'cetakdatameninggal'])->name('cetakdatameninggal');
@@ -222,7 +230,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::group(['middleware' => 'guest'], function () {
-    route::get('/detailberita', [BeritaController::class,'detail']);
+    route::get('/detailberita/{id}', [BeritaController::class,'detail'])->name('detailberita');
     route::get('/detailgallery', [GalleryController::class,'detail']);
     route::get('/listberita', [BeritaController::class,'berita']);
     Route::get('/', [HomeController::class, 'Index'])->name('home');

@@ -42,10 +42,10 @@
     }
 
     .navbar-right a:hover {
-      background-color: blue; 
+      background-color: blue;
       color: #fff;
       border-radius: 30px;
-      padding:10px 20px; 
+      padding:10px 20px;
     }
 
     /* Style the login button */
@@ -66,7 +66,7 @@
     .konten-berita{
         font-size: 25px
     }
-    
+
 </style>
 
 <div class="navbar">
@@ -86,19 +86,19 @@
 </div>
 
 <div class="container">
-    <div class="h1 fw-bolder ms-5 pt-4">Judul Berita</div>
+    <div class="h1 fw-bolder ms-5 pt-4">{{$berita->jdl_berita}}</div>
     <div class="row">
       <div class="col-8">
         <div class="konten-berita card-body p-3 p-md-5">
- 
+
             <p class="pt-4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nulla aspernatur similique dolores animi odit praesentium nihil earum id. Sed ipsa dolorum nemo aspernatur laboriosam aliquid perferendis eos sunt expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat vero reiciendis accusamus deserunt non quia necessitatibus mollitia ipsum laborum. Blanditiis, rem ab placeat beatae at voluptatem ut suscipit sed accusamus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolorum molestias fugiat officia iusto modi odit, sint nihil nesciunt beatae perferendis laudantium. Modi velit recusandae dolore laborum. Repellat, beatae tenetur!lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque fugit quae, suscipit hic repellendus possimus deleniti eius maxime, officiis numquam eveniet dolores sapiente accusantium totam corrupti, amet sunt doloribus dignissimos.
+                {{$berita->desc_berita}}
             </p>
         </div>
       </div>
       <div class="col-3">
         <div class="ms-5 pt-5 mt-5"><div class="bg-featured-blog">
-            <img class="" src="{{asset('assets/img/team-3.jpg')}}" style="width: 350px" alt="">
+            <img class="mb-5" src="{{asset('/storage/'.$berita->foto)}}" style="width: 350px" alt="">
           </div>
       </div>
     </div>
@@ -108,7 +108,7 @@
     <!-- Footer -->
     <footer
             class="text-center text-lg-start text-white pt-3 "
-            style="background-color: #161C28 
+            style="background-color: #161C28
             "
             >
       <!-- Grid container -->
